@@ -1,7 +1,8 @@
 import AppLoader from './appLoader';
+import type { SourcesResponse } from '../../types/api';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback: (data: SourcesResponse) => void) {
         super.getResp(
             {
                 endpoint: 'sources',
