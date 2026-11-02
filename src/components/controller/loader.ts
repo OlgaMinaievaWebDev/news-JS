@@ -1,4 +1,4 @@
-import type { ApiCallback, RequestOptions,RequestParams } from '../../types/api';
+import type { ApiCallback, RequestOptions, RequestParams } from '../../types/api';
 class Loader {
     private baseLink: string;
     private options: RequestOptions;

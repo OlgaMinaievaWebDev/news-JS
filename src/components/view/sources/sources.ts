@@ -27,8 +27,8 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        const sourcesContainer = document.querySelector('.sources')
-        if(!sourcesContainer)throw Error('Sources container is missing');
+        const sourcesContainer = document.querySelector('.sources');
+        if (!sourcesContainer) throw Error('Sources container is missing');
         sourcesContainer.append(fragment);
     }
 }

@@ -23,9 +23,7 @@ class News {
             if (!(newsPhoto instanceof HTMLElement)) {
                 throw new Error('News photo element is missing');
             }
-            newsPhoto.style.backgroundImage = `url(${
-                item.urlToImage || 'img/news_placeholder.jpg'
-            })`;
+            newsPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
 
             const newsAuthor = newsClone.querySelector('.news__meta-author');
             const newsDate = newsClone.querySelector('.news__meta-date');
@@ -37,11 +35,7 @@ class News {
             }
 
             newsAuthor.textContent = item.author || item.source.name;
-            newsDate.textContent = item.publishedAt
-                .slice(0, 10)
-                .split('-')
-                .reverse()
-                .join('-');
+            newsDate.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
 
             newsTitle.textContent = item.title;
             newsSource.textContent = item.source.name;
