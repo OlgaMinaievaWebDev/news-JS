@@ -14,21 +14,44 @@ header h1 {
 }
 
 footer {
-    height: 100px;
+    min-height: 100px;
+    padding: 24px 16px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+footer p {
+    margin: 0;
+}
+footer a {
+    color: #70d6ff;
+    overflow-wrap: anywhere;
+    text-underline-offset: 4px;
+}
+footer a:hover,
+footer a:focus-visible {
+    color: #a5e6ff;
+}
+footer a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+footer .course-link {
+    display: inline-flex;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 6px;
+}
+footer .course-link img {
+    display: block;
+    object-fit: contain;
 }
 footer .copyright {
     font-size: 14px;
-    color: #333;
-    text-align: center;
-}
-footer .copyright a {
-    color: #444;
-}
-footer .copyright a:hover {
-    color: #555;
+    color: #c5cbd5;
 }
 footer .copyright:before {
     content: '©';
