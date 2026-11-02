@@ -1,11 +1,12 @@
 import AppLoader from './appLoader';
 import type { SourcesResponse, ApiCallback, NewsResponse } from '../../types/api';
+import { Endpoint } from '../../types/api';
 
 class AppController extends AppLoader {
     getSources(callback: ApiCallback<SourcesResponse>) {
         super.getResp(
             {
-                endpoint: 'sources',
+                endpoint: Endpoint.Sources,
             },
             callback
         );
@@ -27,7 +28,7 @@ class AppController extends AppLoader {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
                         {
-                            endpoint: 'everything',
+                            endpoint: Endpoint.Everything,
                             options: {
                                 sources: sourceId,
                             },

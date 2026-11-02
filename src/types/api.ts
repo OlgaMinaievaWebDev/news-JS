@@ -3,6 +3,10 @@ export interface Source {
     name: string;
 }
 
+export type ArticleSource = Pick<Source, 'name'> & {
+    id: string | null;
+};
+
 export interface Article {
     title: string;
     url: string;
@@ -10,10 +14,7 @@ export interface Article {
     author: string | null;
     description: string | null;
     urlToImage: string | null;
-    source: {
-        id: string | null;
-        name: string;
-    };
+    source: ArticleSource;
 }
 
 export interface SourcesResponse {
@@ -26,12 +27,18 @@ export type ApiCallback<T> = (data: T) => void;
 export type RequestOptions = Record<string, string>;
 
 export type RequestParams = {
-    endpoint: string;
-    options?: RequestOptions;
-};
+    endpoint: Endpoint;
+} & Partial<{
+    options: RequestOptions;
+}>;
 
 export interface NewsResponse {
     status: string;
     totalResults: number;
     articles: Article[];
+}
+
+export enum Endpoint {
+    Sources = 'sources',
+    Everything = 'everything',
 }

@@ -9,7 +9,7 @@ class App {
         this.view = new AppView();
     }
 
-    start() {
+    public start(): void {
         const sourcesElement = document.querySelector('.sources');
         if (!sourcesElement) throw Error('Source element is missing');
         sourcesElement.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));

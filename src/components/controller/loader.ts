@@ -1,7 +1,7 @@
 import type { ApiCallback, RequestOptions, RequestParams } from '../../types/api';
 class Loader {
     private baseLink: string;
-    private options: RequestOptions;
+    private options: Readonly<RequestOptions>;
 
     constructor(baseLink: string, options: RequestOptions) {
         this.baseLink = baseLink;
